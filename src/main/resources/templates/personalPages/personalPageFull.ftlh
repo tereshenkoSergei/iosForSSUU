@@ -1,25 +1,9 @@
-<!DOCTYPE html>
-<html >
-<head>
-    <title>Menu with jQuery</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+<#import "parts/personalPageTemplate.ftlh" as p>
 
-    <script src="exernalLib.js"></script>
-    <script  type='text/javascript' src="jquery.easing.1.3.js"></script>
+<@p.personalPageTemplate>
 
 
-
-
-</head>
-<body>
-
-
-<div class="content">
-    <div class="tittle">
-        <h1 class="title">Пусть тут будет личный кабинет</h1>
-        <h2 class="title">Modern characters of PC</h2>
-    </div>
+<#--    Nested start-->
     <ul id="sdt_menu" class="sdt_menu">
         <li>
 
@@ -110,9 +94,7 @@
             </div>
         </li>
     </ul>
-</div>
-<!-- The JavaScript -->
 
 
-</body>
-</html>
+    <#--    Nested end-->
+</@p.personalPageTemplate>
