@@ -1,4 +1,4 @@
-<#import "parts/personalPageTemplate.ftlh" as p>
+<#import "../parts/personalPageTemplate.ftlh" as p>
 
 <@p.personalPageTemplate>
 
@@ -9,7 +9,7 @@
 
             <a href="#">
 
-                <img src="images/ssd.jpg" >
+                <img src="../../static/images/ssd.jpg" >
 
 
                 <span class="sdt_active"></span>
@@ -26,7 +26,7 @@
         </li>
         <li>
             <a href="#">
-                <img src="images/mpl.jpg" alt=""/>
+                <img src="../../static/images/mpl.jpg" alt=""/>
                 <span class="sdt_active"></span>
                 <span class="sdt_wrap">
 							<span class="sdt_link">Чатик</span>
@@ -39,7 +39,7 @@
         </li>
         <li>
             <a href="#">
-                <img src="images/ozu.jpg" alt=""/>
+                <img src="../../static/images/ozu.jpg" alt=""/>
                 <span class="sdt_active"></span>
                 <span class="sdt_wrap">
 							<span class="sdt_link">RAM</span>
@@ -53,7 +53,7 @@
         </li>
         <li>
             <a href="#">
-                <img src="images/CPU.jpg" alt=""/>
+                <img src="../../static/images/CPU.jpg" alt=""/>
                 <span class="sdt_active"></span>
                 <span class="sdt_wrap">
 							<span class="sdt_link">Your main friend</span>
@@ -67,7 +67,7 @@
         </li>
         <li>
             <a href="#">
-                <img src="images/bp.jpg" alt=""/>
+                <img src="../../static/images/bp.jpg" alt=""/>
                 <span class="sdt_active"></span>
                 <span class="sdt_wrap">
 							<span class="sdt_link">Power supply</span>
@@ -80,7 +80,7 @@
         </li>
         <li>
             <a href="#">
-                <img src="images/Gtx.jpg" alt=""/>
+                <img src="../../static/images/Gtx.jpg" alt=""/>
                 <span class="sdt_active"></span>
                 <span class="sdt_wrap">
 							<span class="sdt_link">Video card</span>

@@ -1,31 +1,15 @@
-<!DOCTYPE html>
-<html >
-<head>
-    <title>Menu with jQuery</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+<#import "../parts/personalPageTemplate.ftlh" as p>
 
-    <script src="exernalLib.js"></script>
-    <script  type='text/javascript' src="jquery.easing.1.3.js"></script>
+<@p.personalPageTemplate>
 
 
-
-
-</head>
-<body>
-
-
-<div class="content">
-    <div class="tittle">
-        <h1 class="title">Пусть тут будет личный кабинет</h1>
-        <h2 class="title">Modern characters of PC</h2>
-    </div>
+<#--    Nested start-->
     <ul id="sdt_menu" class="sdt_menu">
         <li>
 
             <a href="#">
 
-                <img src="images/ssd.jpg" >
+                <img src="../../static/images/ssd.jpg" >
 
 
                 <span class="sdt_active"></span>
@@ -42,7 +26,7 @@
         </li>
         <li>
             <a href="#">
-                <img src="images/mpl.jpg" alt=""/>
+                <img src="../../static/images/mpl.jpg" alt=""/>
                 <span class="sdt_active"></span>
                 <span class="sdt_wrap">
 							<span class="sdt_link">Чатик</span>
@@ -55,7 +39,7 @@
         </li>
         <li>
             <a href="#">
-                <img src="images/ozu.jpg" alt=""/>
+                <img src="../../static/images/ozu.jpg" alt=""/>
                 <span class="sdt_active"></span>
                 <span class="sdt_wrap">
 							<span class="sdt_link">RAM</span>
@@ -69,7 +53,7 @@
         </li>
         <li>
             <a href="#">
-                <img src="images/CPU.jpg" alt=""/>
+                <img src="../../static/images/CPU.jpg" alt=""/>
                 <span class="sdt_active"></span>
                 <span class="sdt_wrap">
 							<span class="sdt_link">Your main friend</span>
@@ -83,7 +67,7 @@
         </li>
         <li>
             <a href="#">
-                <img src="images/bp.jpg" alt=""/>
+                <img src="../../static/images/bp.jpg" alt=""/>
                 <span class="sdt_active"></span>
                 <span class="sdt_wrap">
 							<span class="sdt_link">Power supply</span>
@@ -96,7 +80,7 @@
         </li>
         <li>
             <a href="#">
-                <img src="images/Gtx.jpg" alt=""/>
+                <img src="../../static/images/Gtx.jpg" alt=""/>
                 <span class="sdt_active"></span>
                 <span class="sdt_wrap">
 							<span class="sdt_link">Video card</span>
@@ -110,9 +94,7 @@
             </div>
         </li>
     </ul>
-</div>
-<!-- The JavaScript -->
 
 
-</body>
-</html>
+    <#--    Nested end-->
+</@p.personalPageTemplate>

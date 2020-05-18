@@ -1,13 +1,10 @@
 ﻿<!DOCTYPE html>
-<html>
+<html >
 <head>
 
 
-
-
-
 	<script src="Materials/script.js"></script>
-	<link href="Materials/Style.css" rel="stylesheet" type="text/css">
+	<link 	href="Materials/Style.css" rel="stylesheet" type="text/css">
 
 
 	<link href="Materials/Images/favicon.ico" rel="shortcut icon" type="image/x-icon">
