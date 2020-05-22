@@ -1,5 +1,6 @@
-package main.domain;
+package main.domain.users;
 
+import main.domain.Discipline;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -8,20 +9,20 @@ import java.util.Collection;
 import java.util.Set;
 
 @Entity
-@Table(name = "usr")
-public class User implements UserDetails {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@DiscriminatorColumn(name="user_role",  discriminatorType = DiscriminatorType.INTEGER)
+@DiscriminatorValue("0")
+
+public abstract class User
+        implements UserDetails
+{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    protected Long id;
 
-    private String username;
-    private String password;
-    private boolean active;
-
-    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
-    @Enumerated(EnumType.STRING)
-    private Set<Role> roles;
+    protected String username;
+    protected String password;
+    protected boolean active;
 
 
 
@@ -58,13 +59,12 @@ public class User implements UserDetails {
         return isActive();
     }
 
+
+
+
+
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return getRoles();
     }
 
     public String getPassword() {
@@ -83,17 +83,7 @@ public class User implements UserDetails {
         this.active = active;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
-    }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
-
-public String getRolesStringa(){
-        return roles.toString();
-}
 
     @Override
     public String toString() {
@@ -102,7 +92,8 @@ public String getRolesStringa(){
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", active=" + active +
-                ", roles=" + roles.toString() +
                 '}';
     }
+
+
 }

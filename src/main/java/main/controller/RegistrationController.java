@@ -1,10 +1,9 @@
 package main.controller;
 
-import main.domain.Role;
-import main.domain.User;
+import main.domain.users.Role;
+import main.domain.users.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import main.repos.UserRepo;
 
 import java.util.Collections;
@@ -30,7 +29,7 @@ public class RegistrationController {
         }
 
         user.setActive(true);
-        user.setRoles(Collections.singleton(Role.USER));
+       // user.setRoles(Collections.singleton(Role.USER));
         userRepo.save(user);
 
         return "redirect:/work";

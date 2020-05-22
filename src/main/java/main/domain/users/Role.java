@@ -1,9 +1,9 @@
-package main.domain;
+package main.domain.users;
 
 import org.springframework.security.core.GrantedAuthority;
 
 public enum Role implements GrantedAuthority {
-    USER, TEACHER, ADMIN;
+    STUDENT, TEACHER, ADMIN, DepartmentManager;
 
     @Override
     public String getAuthority() {

@@ -7,8 +7,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css">
 
-        <script src="exernalLib.js"></script>
-        <script  type='text/javascript' src="jquery.easing.1.3.js"></script>
+
+
 
 
 
@@ -18,14 +18,21 @@
 
 
     <div class="content">
+
+        <script src="exernalLib.js"></script>
+        <script  type='text/javascript' src="jquery.easing.1.3.js"></script>
+
         <div class="tittle">
             <h1 class="title">Пусть тут будет личный кабинет</h1>
             <h2 class="title">Modern characters of PC</h2>
         </div>
 
-        <form action="/logout" method="post">
+        <form action="/logout" method="post" enctype="multipart/form-data">
             <input type="hidden" name="_csrf" value="${_csrf.token}" />
             <input type="submit" value="Sign Out"/>
+
+            <input type="file" name="file">
+
         </form>
 
 <#nested >
