@@ -2,13 +2,9 @@ package main.domain;
 
 
 
-import main.domain.users.Student;
 import main.domain.users.Teacher;
-import main.domain.users.User;
 
 import javax.persistence.*;
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.List;
 
 @Entity
@@ -18,7 +14,7 @@ public class Discipline {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long disId;
+    private Long id;
     private String name;
     private int numOfTerm;
 
@@ -42,12 +38,12 @@ public class Discipline {
 
 
 
-    public Long getDisId() {
-        return disId;
+    public Long getId() {
+        return id;
     }
 
-    public void setDisId(Long disId) {
-        this.disId = disId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
