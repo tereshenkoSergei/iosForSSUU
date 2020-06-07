@@ -12,6 +12,7 @@ public class Speciality {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String name;
 
     @OneToMany(mappedBy = "speciality", fetch = FetchType.EAGER)
@@ -23,11 +24,17 @@ public class Speciality {
             inverseJoinColumns=@JoinColumn(name="discipline_id"))
     private List<Discipline> disciplineList;
 
-    @ManyToMany
+    //исправить на ont=etomany
+   /* @ManyToMany
     @JoinTable (name="department_speciality",
             joinColumns=@JoinColumn (name="speciality_id"),
-            inverseJoinColumns=@JoinColumn(name="department_id"))
-    private List<Department> departmentList;
+            inverseJoinColumns=@JoinColumn(name="department_id"))*/
+
+ //  @OneToMany
+  // @ManyToOne(mappedBy = "departmentList", fetch = FetchType.LAZY)
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
 
 
 }

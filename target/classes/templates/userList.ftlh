@@ -54,7 +54,7 @@ List of users
     <thead>
 
     <th> name</th>
-    <th>role</th>
+    <th> Role</th>
     <th></th>
     </thead>
 
@@ -62,8 +62,9 @@ List of users
 
     <#list users as user>
         <tr>
-            <td>${user.username}</td>
-            <td>${user.getRolesStringa()}</td>
+            <td>${user.username}                </td>
+            <td>${user.getClass()}</td>
+
             <td><a href="/user/${user.id}">Edit</a></td>
         </tr>
 

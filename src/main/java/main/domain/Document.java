@@ -3,7 +3,7 @@ package main.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "document_files")
+@Table(name = "documentFiles")
 public class Document {
 
     @Id

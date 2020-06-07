@@ -17,10 +17,13 @@ public class Department {
 
     private String name;
 
-    @ManyToMany
+
+    /*
     @JoinTable (name="department_speciality",
             joinColumns=@JoinColumn (name="department_id"),
-            inverseJoinColumns=@JoinColumn(name="speciality_id"))
+            inverseJoinColumns=@JoinColumn(name="speciality_id"))*/
+
+    @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     private List<Speciality> specialityList;
 
 

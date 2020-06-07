@@ -15,8 +15,9 @@ UserEditor
         <input type="hidden" value="${user.id}" name="userId">
 
         <input type="text" name="username" value="${user.username}">
+        <input type="text" name="username" value="${user.password}">
         <label>
-            ${user.getRolesStringa()}
+            ${user.getClass()}
         </label>
 
 

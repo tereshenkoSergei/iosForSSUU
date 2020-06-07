@@ -2,10 +2,7 @@ package main.controller;
 
 import java.util.Map;
 
-import main.domain.users.Admin;
-import main.domain.users.Role;
-import main.domain.users.Student;
-import main.domain.users.User;
+import main.domain.users.*;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +27,10 @@ public class MainController {
         if (user instanceof Student) {
             System.out.println("personalPages/studentPersonalPage");
             return "personalPages/studentPersonalPage";
+        }
+        if (user instanceof Teacher) {
+            System.out.println("personalPages/teacherPersonalPage");
+            return "personalPages/teacherPersonalPage";
         }
         System.out.println("personalPages/personalPageFull");
 
