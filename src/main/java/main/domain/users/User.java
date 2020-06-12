@@ -16,7 +16,7 @@ import java.util.*;
 public abstract class User
         implements UserDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     protected Long id;
 
     protected String username;
@@ -32,6 +32,21 @@ public abstract class User
         return id.equals(user.id);
     }
 
+
+    public List<Discipline> getDisciplineList() {
+        return discipline;
+    }
+
+    public void setDiscipline(List<Discipline> discipline) {
+        this.discipline = discipline;
+    }
+
+    @ManyToMany
+    @JoinTable (name="user_discipline",
+            joinColumns=@JoinColumn (name="user_id"),
+            inverseJoinColumns=@JoinColumn(name="discipline_id"))
+    private List<Discipline> discipline;
+
     @Override
     public int hashCode() {
         return Objects.hash(id);
@@ -44,7 +59,7 @@ public abstract class User
     @JoinTable (name="user_dialog",
             joinColumns=@JoinColumn (name="user_id"),
             inverseJoinColumns=@JoinColumn(name="dialog_id"))
-    private List<Dialog> dialogList;
+    private Set<Dialog> dialogList;
 
     public Long getId() {
         return id;
@@ -61,7 +76,7 @@ public abstract class User
     public void addDialog(Dialog dialog){
 
         if(dialogList==null){
-            dialogList = new ArrayList<>();
+            dialogList = new LinkedHashSet<>();
         }
         dialogList.add(dialog);
     }
@@ -82,11 +97,11 @@ public abstract class User
         this.messageList = messageList;
     }
 
-    public List<Dialog> getDialogList() {
+    public Set<Dialog> getDialogList() {
         return dialogList;
     }
 
-    public void setDialogList(List<Dialog> dialogList) {
+    public void setDialogList(Set<Dialog> dialogList) {
         this.dialogList = dialogList;
     }
 

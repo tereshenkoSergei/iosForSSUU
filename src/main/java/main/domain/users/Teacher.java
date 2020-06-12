@@ -16,11 +16,7 @@ import java.util.List;
 public class Teacher extends User{
 
 
-    @ManyToMany
-    @JoinTable (name="teacher_discipline",
-            joinColumns=@JoinColumn (name="teacher_id"),
-            inverseJoinColumns=@JoinColumn(name="discipline_id"))
-    private List<Discipline> discipline;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

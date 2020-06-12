@@ -9,6 +9,8 @@
 <#if dialog??>
     <#list dialog.getMessageList() as l>
         <label>${l.getText()}     </label>
+        <label>${l.getAuthor().getUsername()}</label> </br>
+
     </#list>
 </#if>
 

@@ -3,6 +3,8 @@ package main.domain;
 import main.domain.users.DepartmentManager;
 import main.domain.users.Teacher;
 import main.domain.users.User;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,7 +14,8 @@ import java.util.List;
 public class Department {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+
     private Long id;
 
     private String name;
@@ -23,6 +26,7 @@ public class Department {
             joinColumns=@JoinColumn (name="department_id"),
             inverseJoinColumns=@JoinColumn(name="speciality_id"))*/
 
+
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     private List<Speciality> specialityList;
 
@@ -32,4 +36,14 @@ public class Department {
 
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     private List<DepartmentManager> departmentManagerList;
+
+
+    public String getName() {
+
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
