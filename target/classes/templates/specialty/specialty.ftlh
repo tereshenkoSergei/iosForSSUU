@@ -6,19 +6,16 @@
 </head>
 <body>
 
-<form action="/disciplineList/create" method="get">
+<label>
+    <#list departments as department>
+        <h3>${department.getName()}</h3>
+        <#list department.getSpecialityList() as speciality>
+            <label>${speciality.getName()}</label></br>
 
-    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+        </#list>
+    </#list>
 
-    <label>
-        <input type="text" name="specialtyName">
-    </label>
-
-
-    <button type="submit">Создать кафедру</button>
-</form>
-
-
+</label>
 <#--Добавить экшона-->
 
 

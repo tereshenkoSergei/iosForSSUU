@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form action="/disciplineList/create" method="get">
+<form action="/specialty/create/execute" method="post">
 
     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
 
@@ -14,11 +14,14 @@
         <input type="text" name="specialtyName">
     </label>
 
-    <label>
-        <input type="number" name="numOfTerm">
-    </label>
+    <select name="department">
+        <#list departments as d>
+            <option>${d.getName()}</option>
+        </#list>
+    </select>
 
     <button type="submit">Создать специальность</button>
+
 </form>
 
 

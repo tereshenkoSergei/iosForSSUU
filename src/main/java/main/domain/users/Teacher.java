@@ -29,4 +29,11 @@ public class Teacher extends User{
     @JoinColumn(name = "department_id")
     private Department department;
 
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 }

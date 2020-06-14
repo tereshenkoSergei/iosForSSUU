@@ -2,9 +2,7 @@ package main.repos;
 
 
 import main.domain.Message;
-import main.domain.users.Dialog;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 

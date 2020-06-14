@@ -1,6 +1,5 @@
 package main.domain;
 
-import main.domain.users.Dialog;
 import main.domain.users.User;
 
 import javax.persistence.*;

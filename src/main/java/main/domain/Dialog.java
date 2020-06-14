@@ -1,6 +1,7 @@
-package main.domain.users;
+package main.domain;
 
 import main.domain.Message;
+import main.domain.users.User;
 
 import javax.persistence.*;
 import java.util.ArrayList;

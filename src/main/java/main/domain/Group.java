@@ -26,7 +26,31 @@ public class Group {
 
     //private List<Discipline> studyList;
 
-    public void toNextCourse(){
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public Integer getCourse() {
+        return course;
+    }
+
+    public void setCourse(Integer course) {
+        this.course = course;
+    }
+
+    public Speciality getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(Speciality speciality) {
+        this.speciality = speciality;
+    }
+
+    public void toNextCourse() {
 
     }
 }

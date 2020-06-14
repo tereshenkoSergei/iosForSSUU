@@ -1,12 +1,11 @@
 package main.controller;
 
 import main.domain.Message;
-import main.domain.users.Dialog;
+import main.domain.Dialog;
 import main.domain.users.User;
 import main.repos.DialogRepo;
 import main.repos.MessageRepo;
 import main.repos.UserRepo;
-import org.aspectj.lang.annotation.SuppressAjWarnings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;

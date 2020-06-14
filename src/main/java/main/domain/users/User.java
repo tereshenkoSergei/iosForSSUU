@@ -1,8 +1,8 @@
 package main.domain.users;
 
+import main.domain.Dialog;
 import main.domain.Discipline;
 import main.domain.Message;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
@@ -21,7 +21,6 @@ public abstract class User
 
     protected String username;
     protected String password;
-    protected boolean active;
     protected String email;
 
     @Override
@@ -122,7 +121,7 @@ public abstract class User
 
     @Override
     public boolean isEnabled() {
-        return isActive();
+        return true;
     }
 
 
@@ -138,13 +137,7 @@ public abstract class User
         this.password = password;
     }
 
-    public boolean isActive() {
-        return active;
-    }
 
-    public void setActive(boolean active) {
-        this.active = active;
-    }
 
 
     @Override
@@ -153,7 +146,7 @@ public abstract class User
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", active=" + active +
+
                 '}';
     }
 

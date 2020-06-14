@@ -15,6 +15,30 @@ public class Speciality {
 
     private String name;
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Group> getGroupList() {
+        return groupList;
+    }
+
+    public List<Discipline> getDisciplineList() {
+        return disciplineList;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
     @OneToMany(mappedBy = "speciality", fetch = FetchType.EAGER)
     private List<Group> groupList;
 

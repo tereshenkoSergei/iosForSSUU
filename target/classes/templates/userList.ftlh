@@ -73,6 +73,12 @@ List of users
 
 </table>
 
+</br>
+
+<a href="/createUser/student">Добавить студента</a></br>
+<a href="/createUser/teacher">Добавить преподавателя</a></br>
+<a href="/createUser/admin">Добавить админа</a></br>
+<a href="/createUser/dm">Добавить ответственного за кафедру</a></br>
 
 </body>
 </html>

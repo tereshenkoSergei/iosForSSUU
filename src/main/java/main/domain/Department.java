@@ -27,6 +27,22 @@ public class Department {
             inverseJoinColumns=@JoinColumn(name="speciality_id"))*/
 
 
+    public Long getId() {
+        return id;
+    }
+
+    public List<Speciality> getSpecialityList() {
+        return specialityList;
+    }
+
+    public List<Teacher> getTeacherList() {
+        return teacherList;
+    }
+
+    public List<DepartmentManager> getDepartmentManagerList() {
+        return departmentManagerList;
+    }
+
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     private List<Speciality> specialityList;
 
