@@ -57,25 +57,28 @@ public class MessageController {
                           @RequestParam String userName, Model model) {
 
 
-        model.addAttribute("users", userRepo.findAll());
-        model.addAttribute("userset", userSet);
-
         userSet.add(currentUser);
         userSet.add(userRepo.findByUsername(userName));
 
         userRepo.saveAll(userSet);
 
+        model.addAttribute("users", userRepo.findAll());
+        model.addAttribute("userset", userSet);
 
         return "chats/createChat";
     }
+
+
 
     @GetMapping("/createdialog")
     public String createDialog() {
 
         Dialog dialog = new Dialog();
+        //dialog.getUserList().addAll(userSet);
+        userSet.forEach(u -> u.addDialog(dialog));
+        userRepo.saveAll(userSet);
         dialogRepo.save(dialog);
 
-        userSet.forEach(u -> u.addDialog(dialog));
         return "redirect:/chat";
     }
 
@@ -89,7 +92,7 @@ public class MessageController {
     }
 
     @PostMapping("/sendMessage")
-    public String sendMessage(@RequestParam Long dialogId ,
+    public String sendMessage(@RequestParam Long dialogId,
                               @RequestParam String messageText,
                               @AuthenticationPrincipal User user,
                               Model model) {
@@ -106,9 +109,6 @@ public class MessageController {
         messageRepo.save(message);
 
 
-
-
-
-        return "redirect:/chat/"+ dialog.get().getId().toString();
+        return "redirect:/chat/" + dialog.get().getId().toString();
     }
 }

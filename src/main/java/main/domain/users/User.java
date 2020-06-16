@@ -32,19 +32,6 @@ public abstract class User
     }
 
 
-    public List<Discipline> getDisciplineList() {
-        return discipline;
-    }
-
-    public void setDiscipline(List<Discipline> discipline) {
-        this.discipline = discipline;
-    }
-
-    @ManyToMany
-    @JoinTable (name="user_discipline",
-            joinColumns=@JoinColumn (name="user_id"),
-            inverseJoinColumns=@JoinColumn(name="discipline_id"))
-    private List<Discipline> discipline;
 
     @Override
     public int hashCode() {
@@ -54,7 +41,7 @@ public abstract class User
     @OneToMany(mappedBy = "author")
     private List<Message> messageList;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable (name="user_dialog",
             joinColumns=@JoinColumn (name="user_id"),
             inverseJoinColumns=@JoinColumn(name="dialog_id"))
@@ -83,6 +70,13 @@ public abstract class User
     public String getEmail() {
         return email;
     }
+
+    public String getClassNameAsString(){
+        return this.getClass().toString().substring(
+                this.getClass().toString().lastIndexOf('.') + 1
+        );
+    }
+
 
     public void setEmail(String email) {
         this.email = email;

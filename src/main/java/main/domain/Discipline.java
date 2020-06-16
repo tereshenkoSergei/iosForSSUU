@@ -3,10 +3,11 @@ package main.domain;
 
 import main.domain.users.Teacher;
 import main.domain.users.User;
+import org.hibernate.annotations.Fetch;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "discipline")
@@ -27,7 +28,7 @@ public class Discipline {
         this("", 0, 0);
         this.documents = new ArrayList<>();
         this.specialityList = new ArrayList<>();
-        this.userList = new ArrayList<>();
+        this.teacherList = new LinkedHashSet<>();
         this.documents = new ArrayList<>();
 
     }
@@ -46,12 +47,12 @@ public class Discipline {
         this.hours = hours;
     }
 
-    public List<User> getUserList() {
-        return userList;
+    public Set<Teacher> getTeacherList() {
+        return teacherList;
     }
 
-    public void setUserList(List<User> userList) {
-        this.userList = userList;
+    public void setTeacherList(Set<Teacher> teacherList) {
+        this.teacherList = teacherList;
     }
 
     public List<Speciality> getSpecialityList() {
@@ -70,14 +71,15 @@ public class Discipline {
         this.documents = documents;
     }
 
-    @ManyToMany
-    @JoinTable(name = "user_discipline",
-            joinColumns = @JoinColumn(name = "user_id"),
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "teacher_discipline",
+            joinColumns = @JoinColumn(name = "discipline_id"),
             inverseJoinColumns = @JoinColumn(name = "teacher_id"))
-    private List<User> userList;
+
+    private Set<Teacher> teacherList;
 
 
-    @OneToMany(mappedBy = "discipline", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "discipline", fetch = FetchType.LAZY)
     private List<Document> documents;
 
 
@@ -99,6 +101,8 @@ public class Discipline {
     public String getName() {
         return name;
     }
+
+
 
     public void setName(String name) {
         this.name = name;

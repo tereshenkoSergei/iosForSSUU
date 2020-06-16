@@ -10,7 +10,7 @@
     <#list departments as department>
         <h3>${department.getName()}</h3>
         <#list department.getSpecialityList() as speciality>
-            <label>${speciality.getName()}</label></br>
+            <a href="/specialty/edit/${speciality.getId()}">${speciality.getName()}</a></br>
 
         </#list>
     </#list>

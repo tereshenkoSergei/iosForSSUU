@@ -37,15 +37,15 @@ public class UserCreationController {
 
     @PostMapping("/admin/execute")
     public String executeAdmin(@RequestParam String name,
-                                 @RequestParam String email,
-                                 @RequestParam String pswrd
-                                 ) {
+                               @RequestParam String email,
+                               @RequestParam String pswrd
+    ) {
         Admin admin = new Admin();
         admin.setUsername(name);
         admin.setEmail(email);
         admin.setPassword(pswrd);
 
-
+        userRepo.save(admin);
         return "userAdd/adminAdd";
     }
 
@@ -99,14 +99,16 @@ public class UserCreationController {
         teacher.setPassword(pswrd);
         teacher.setDepartment(departmentRepo.findByName(department));
 
+        userRepo.save(teacher);
+
         return "userAdd/teacherAdd";
     }
 
     @PostMapping("/dm/execute")
     public String executeDm(@RequestParam String name,
-                                 @RequestParam String email,
-                                 @RequestParam String pswrd,
-                                 @RequestParam String department) {
+                            @RequestParam String email,
+                            @RequestParam String pswrd,
+                            @RequestParam String department) {
         DepartmentManager dm = new DepartmentManager();
         dm.setUsername(name);
         dm.setEmail(email);

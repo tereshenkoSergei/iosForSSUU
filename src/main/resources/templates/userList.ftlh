@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -50,28 +50,7 @@
 
 
 List of users
-<table>
-    <thead>
 
-    <th> name</th>
-    <th> Role</th>
-    <th></th>
-    </thead>
-
-    <tbody class="rounded">
-
-    <#list users as user>
-        <tr>
-            <td>${user.username}                </td>
-            <td>${user.getClass()}</td>
-
-            <td><a href="/user/${user.id}">Edit</a></td>
-        </tr>
-
-    </#list>
-    </tbody>
-
-</table>
 
 </br>
 
@@ -79,6 +58,45 @@ List of users
 <a href="/createUser/teacher">Добавить преподавателя</a></br>
 <a href="/createUser/admin">Добавить админа</a></br>
 <a href="/createUser/dm">Добавить ответственного за кафедру</a></br>
+<a href="/group/create">Добавить группу</a></br>
+
+<table>
+
+
+
+    <thead>
+
+    <th> name</th>
+    <th> Role</th>
+    <th></th>
+
+
+    </thead>
+
+
+
+    <tbody class="rounded">
+
+
+
+    <#list users as user>
+        <tr>
+            <td>${user.getUsername()}                </td>
+            <td>${user.getEmail()}</td>
+            <td>${user.getClassNameAsString()}</td>
+            <td><a href="/user/${user.id}">Edit</a></td>
+        </tr>
+    </#list>
+    </tbody>
+
+</table>
+
+
+
+
+</br>
+
+
 
 </body>
 </html>

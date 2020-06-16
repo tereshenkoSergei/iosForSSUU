@@ -14,5 +14,7 @@
 
 </#if>
 
+<a href="/chat/createNewChat">Создать новый чат</a>
+
 </body>
 </html>

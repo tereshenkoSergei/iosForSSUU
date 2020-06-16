@@ -32,8 +32,9 @@
             <option>7</option>
             <option>8</option>
         </select>
-    </label>
+    </label><p>Номер семестра</p>
 
+    </br>
     <button type="submit">Создать дисциплину</button>
 </form>
 

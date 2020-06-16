@@ -36,4 +36,19 @@ public class Teacher extends User{
     public void setDepartment(Department department) {
         this.department = department;
     }
+
+    public List<Discipline> getDisciplineList() {
+        return disciplineList;
+    }
+
+    public void setDiscipline(List<Discipline> discipline) {
+        this.disciplineList = discipline;
+    }
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable (name="teacher_discipline",
+            joinColumns=@JoinColumn (name="teacher_id"),
+            inverseJoinColumns=@JoinColumn(name="discipline_id"))
+    private List<Discipline> disciplineList;
+
 }

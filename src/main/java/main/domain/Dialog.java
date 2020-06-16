@@ -50,7 +50,7 @@ public class Dialog {
                 '}';
     }
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(name = "user_dialog",
             joinColumns = @JoinColumn(name = "dialog_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))

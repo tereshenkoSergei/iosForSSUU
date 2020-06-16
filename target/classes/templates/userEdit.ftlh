@@ -15,7 +15,7 @@ UserEditor
         <input type="hidden" value="${user.id}" name="userId">
 
         <input type="text" name="username" value="${user.username}">
-        <input type="text" name="username" value="${user.password}">
+        <input type="text" name="password" value="${user.password}">
         <label>
             ${user.getClass()}
         </label>

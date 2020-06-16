@@ -24,9 +24,6 @@ public class UserController {
 
         model.addAttribute("users", userRepo.findAll());
 
-
-
-
         return "userList";
     }
 

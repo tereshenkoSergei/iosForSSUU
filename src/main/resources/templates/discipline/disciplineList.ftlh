@@ -7,33 +7,35 @@
 <body>
 
 
-<form action="/disciplineList/create" method="get">
-    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
 
-
-
-    <button type="submit">Создать дисциплину</button>
-
-</form>
 
 
 
     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
 
-    <label>
-        <select name="userName">
-            <#list user.getDisciplineList() as discipline>
-                <option>
-                    ${discipline.toString()}
-                </option>
-            </#list>
-        </select>
-    </label>
+<#--    <label>-->
+<#--        <select name="userName">-->
+<#--            <#list disciplines as discipline>-->
+<#--                <option>-->
+<#--                    ${discipline.getName()}-->
+<#--                </option>-->
+<#--            </#list>-->
+<#--        </select>-->
+<#--    </label>-->
+
+    <#list disciplines as discipline>
+        <label>
+           <a href="/disciplineList/${discipline.getId()}"> ${discipline.getName()}</a>
+        </label></br>
+    </#list>
+
+    </br></br>
+
+    <#if isAdmin??>
+        <a href="/disciplineList/create">Перейти к добавлению дисциплины</a>
+    </#if>
 
 
-
-
-    <a href="/disciplineList/create">Перейти к добавлению дисциплины</a>
 
 
 </body>
