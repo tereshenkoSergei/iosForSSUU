@@ -1,130 +1,44 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <title>Spring Security Example </title>
-<!--    -->
-<!--    <link rel="stylesheet" href="regstyle.css">-->
-<!--    -->
-    <style>
-
-        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css');
-
-        *{
-            font-family: 'Open Sans', 'sans-serif', 'FontAwesome';
-        }
-        body{
-            background: rgb(52, 56, 61);
-        }
-        h1{
-            color: rgb(255, 255, 255);
-            margin: 20px auto 0;
-            width: 200px;
-            text-align: center;
-        }
-        #wrapper{
-            position: absolute;
-            width: 320px;
-            left: 50%;
-            margin-left: -160px;
-            top: 50%;
-            margin-top: -75px;
-        }
-
-        /* === Sign in Form === */
-        #signin {
-            height: 90px;
-            width: 300px;
-            border-radius: 8px;
-            position: relative;
-        }
-        #signin::before {
-            display: block;
-            position: relative;
-            height: 2px;
-            background: rgb(52, 56, 61);
-            content: '';
-            top: 44px;
-            margin-left: 20px;
-            z-index: 1;
-        }
-        #signin input:first-of-type{
-            border-top-right-radius: 8px;
-            border-top-left-radius: 8px;
-        }
-        #signin input:last-of-type{
-            border-bottom-right-radius: 8px;
-            border-bottom-left-radius: 8px;
-        }
-        #signin  input[type="text"], #signin  input[type="password"], #signin button[type="submit"]{
-            background: rgb(28, 30, 33);
-            box-shadow: inset -100px -100px 0 rgb(28, 30, 33); /*Prevent yellow autofill color*/
-            color: rgb(52, 56, 61);
-        }
-        #signin  input[type="text"], #signin  input[type="password"]{
-            position: relative;
-            display: block;
-            width: 280px;
-            height: 45px;
-            border: 0;
-            outline: 0;
-            top: -2px;
-            padding: 0 0 0 20px;
-            font-weight: 700;
-        }
-        #signin  input[type="text"]:focus, #signin  input[type="password"]:focus{
-            color: rgb(255, 255, 255);
-        }
-        #signin button[type="submit"]{
-            display: block;
-            position: absolute;
-            width: 52px;
-            height: 52px;
-            color: rgb(52, 56, 61);
-            border-radius: 50px;
-            outline: 0;
-            z-index: 2;
-            top: 19px;
-            right: -24px;
-            border: 6px solid rgb(52, 56, 61);
-            font-size: 25px;
-            text-indent: 0px;
-            padding-left: 9px;
-            padding-bottom: 3px;
-            text-align: center;
-        }
-        #signin button[type="submit"]:hover{
-            color: rgb(0, 126, 165);
-            text-shadow: 0 0 10px rgb(0, 126, 165);
-            cursor: pointer;
-        }
-        #signin p {
-            color: rgb(79, 85, 97);
-            padding: 0 20px;
-            font-weight: 700;
-            font-size: 12px;
-            margin: 5px 0 0 0;
-        }
-        #signin p > a{
-            color: rgb(111, 119, 135);
-            text-decoration: none;
-        }
-        #signin p > a:hover{
-            border-bottom: 1px solid;
-        }
-    </style>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link href="css/custom.css" rel="stylesheet" type="text/css">
+	<link href="images2/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+	<link href="images2/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+	<link href="images2/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+	<link href="/site.webmanifest" rel="manifest">
+	<link href="images2/safari-pinned-tab.svg" rel="mask-icon">
+	<meta content="#da532c" name="msapplication-TileColor">
+	<meta content="#ffffff" name="theme-color">
+	<title>Авторизация | ИОС СГТУ</title>
 </head>
-<body>
-Login page
-<form action="/login" method="post"  id="signin">
+<body style="background-image: url('images/background.jpg')">
 
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div class="overlay"></div>
 
-    <div><input type="submit" value="Sign In"/></div>
+	<div class="container">
+		<div class="row" style="margin: 20px auto;">
+			<div class="col-md-offset-3 col-md-6">
+				<form class="form-horizontal" action="/login" method="post"  id="signin">
+					<span class="heading">АВТОРИЗАЦИЯ</span>
+					<div class="form-group">
+						<input class="form-control" id="username"  name="username" placeholder="E-mail" type="email"> <i class="fa fa-user"></i>
+					</div>
+					<div class="form-group help">
+						<input class="form-control" id="password" name="password" placeholder="Password" type="password"> <i class="fa fa-lock"></i> <a class="fa fa-question-circle" href="#"></a>
+					</div>
+					<div class="form-group">
+						<div class="main-checkbox">
+							<input id="checkbox1" name="check" type="checkbox" value="none"> <label for="checkbox1"></label>
+						</div><span class="text">Запомнить</span> <button class="btn btn-default" type="submit">ВХОД</button>
+					</div>
+					<input type="hidden" name="_csrf" value="${_csrf.token}" />
+				</form>
+			</div>
+		</div><!-- /.row -->
 
-    <input type="hidden" name="_csrf" value="${_csrf.token}" />
-</form>
-<a href="/reg">Add new user</a>
+	</div><!-- /.container -->
 </body>
 </html>

@@ -69,7 +69,6 @@ public class MessageController {
     }
 
 
-
     @GetMapping("/createdialog")
     public String createDialog() {
 
@@ -83,11 +82,12 @@ public class MessageController {
     }
 
     @GetMapping("{dialog}")
-    public String dialogItem(@PathVariable Dialog dialog, Model model) {
+    public String dialogItem(@PathVariable Dialog dialog, Model model, @AuthenticationPrincipal User user) {
         System.out.println(dialog.toString());
         model.addAttribute("dialog", dialog);
         model.addAttribute("dialogId", dialog.getId());
-        return "chats/dialog";
+        model.addAttribute("thisUserName", user.getUsername());
+        return "chats/dialog1";
 
     }
 

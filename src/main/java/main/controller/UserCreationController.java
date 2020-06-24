@@ -32,7 +32,7 @@ public class UserCreationController {
 
     @GetMapping("/admin")
     public String createAdmin() {
-        return "userAdd/adminAdd";
+        return "userAdd/adminAdd1";
     }
 
     @PostMapping("/admin/execute")
@@ -46,14 +46,14 @@ public class UserCreationController {
         admin.setPassword(pswrd);
 
         userRepo.save(admin);
-        return "userAdd/adminAdd";
+        return "userAdd/adminAdd1";
     }
 
 
     @GetMapping("/dm")
     public String createDm(Model model) {
         model.addAttribute("departments", departmentRepo.findAll());
-        return "userAdd/dmAdd";
+        return "userAdd/dmAdd1";
     }
 
     @GetMapping("/student")
@@ -64,7 +64,7 @@ public class UserCreationController {
         model.addAttribute("departments", departmentRepo.findAll());
 
 
-        return "userAdd/studentAdd";
+        return "userAdd/studentAdd1";
     }
 
     @PostMapping("/student/execute")
@@ -85,7 +85,7 @@ public class UserCreationController {
     @GetMapping("/teacher")
     public String createTeacher(Model model) {
         model.addAttribute("departments", departmentRepo.findAll());
-        return "userAdd/teacherAdd";
+        return "userAdd/teacherAdd1";
     }
 
     @PostMapping("/teacher/execute")
@@ -101,7 +101,7 @@ public class UserCreationController {
 
         userRepo.save(teacher);
 
-        return "userAdd/teacherAdd";
+        return "userAdd/teacherAdd1";
     }
 
     @PostMapping("/dm/execute")
@@ -115,7 +115,7 @@ public class UserCreationController {
         dm.setPassword(pswrd);
         dm.setDepartment(departmentRepo.findByName(department));
 
-        return "userAdd/dmAdd";
+        return "userAdd/dmAdd1";
     }
 
 }

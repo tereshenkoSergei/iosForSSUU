@@ -83,5 +83,8 @@ public class Message {
         this.tag = tag;
     }
 
+    public boolean ifThisUser(String name){
+        return author.getUsername().equals(name);
+    }
 
 }

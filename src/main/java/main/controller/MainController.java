@@ -15,8 +15,7 @@ public class MainController {
     @GetMapping("/work")
     public String greeting(
             @AuthenticationPrincipal User user,
-            Map<String, Object> model)
-    {
+            Map<String, Object> model) {
         System.out.println(user.toString());
 
 
@@ -35,13 +34,15 @@ public class MainController {
         System.out.println("personalPages/personalPageFull");
 
 
-        return  "personalPages/personalPageFull";
+        return "personalPages/personalPageFull";
 
     }
 
     @GetMapping("/")
     public String mainPage() {
+       // return "MainpageIOS/MainpageIOS/index";
         return "main_page";
+
     }
 
 

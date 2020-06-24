@@ -17,8 +17,29 @@ public class MvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+ /*       registry.addResourceHandler("/css/**")
+                .addResourceLocations( "C:/IOS/src/main/resources/static/css" );
+*/
+
+        registry.addResourceHandler("/css/**")
+                .addResourceLocations( "file:///C:/IOS/src/main/resources/static/css/" );
+
+        registry.addResourceHandler("/videos/**")
+                .addResourceLocations( "file:///C:/IOS/src/main/resources/static/videos/" );
+
+        registry.addResourceHandler("/fonts/**")
+                .addResourceLocations( "file:///C:/IOS/src/main/resources/static/fonts/" );
+
+        registry.addResourceHandler("/js/**")
+                .addResourceLocations( "file:///C:/IOS/src/main/resources/static/js/" );
+
         registry.addResourceHandler("/img/**")
                 .addResourceLocations( "file:///" + uploadPath + "/" );
+
+        registry.addResourceHandler("/images/**")
+                .addResourceLocations( "file:///C:/IOS/src/main/resources/static/images/" );
+        registry.addResourceHandler("/images2/**")
+                .addResourceLocations( "file:///C:/IOS/src/main/resources/static/images2/" );
 
         registry.addResourceHandler("/static/**")
                     .addResourceLocations("classpath:/static/");
