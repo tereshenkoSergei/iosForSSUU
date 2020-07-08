@@ -30,9 +30,7 @@ public class DisciplineController {
             @AuthenticationPrincipal User user,
             Model model
     ) {
-        /*if (user instanceof Admin) {
-            model.addAttribute("disciplines", disciplineRepo.findAll());
-        }*/
+
 
         if (user instanceof Teacher) {
             model.addAttribute("disciplines", ((Teacher) user).getDisciplineList());
@@ -45,7 +43,7 @@ public class DisciplineController {
             model.addAttribute("isAdmin", true);
         }
 
-        return "discipline/disciplineList";
+        return "discipline/disciplineList1";
     }
 
     @GetMapping("/create")

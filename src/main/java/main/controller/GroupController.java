@@ -16,26 +16,33 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/group")
 public class GroupController {
 
-    @Autowired
+    final
     SpecialityRepo specialityRepo;
 
-    @Autowired
+    final
     GroupRepo groupRepo;
 
-    @Autowired
+    final
     DepartmentRepo departmentRepo;
+
+    public GroupController(SpecialityRepo specialityRepo, GroupRepo groupRepo, DepartmentRepo departmentRepo) {
+        this.specialityRepo = specialityRepo;
+        this.groupRepo = groupRepo;
+        this.departmentRepo = departmentRepo;
+    }
 
     @GetMapping("/create")
     public String createGroup(Model model) {
 
         model.addAttribute("departments", departmentRepo.findAll());
 
-        return "group/createGroup";
+        return "group/createGroup1";
     }
 
     @PostMapping("create/execute")
     public String execute(@RequestParam Integer directionNumber,
                           @RequestParam Integer course,
+                          @RequestParam String prefix,
                           @RequestParam String speciality,
                           Model model) {
 
@@ -43,7 +50,7 @@ public class GroupController {
 
         Group group = new Group();
         group.setCourse(course);
-        group.setGroupName("B-" + speciality + "-" + course.toString() + directionNumber);
+        group.setGroupName(prefix + speciality + "-" + course.toString() + directionNumber);
         group.setSpeciality(specialityRepo.findByName(speciality));
 
         groupRepo.save(group);

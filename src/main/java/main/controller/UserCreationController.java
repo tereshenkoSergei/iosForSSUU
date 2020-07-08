@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.validation.Constraint;
-
 @Controller
 @RequestMapping("/createUser")
 public class UserCreationController {
@@ -32,7 +30,7 @@ public class UserCreationController {
 
     @GetMapping("/admin")
     public String createAdmin() {
-        return "userAdd/adminAdd1";
+        return "userAdd/adminAdd2";
     }
 
     @PostMapping("/admin/execute")
@@ -46,7 +44,7 @@ public class UserCreationController {
         admin.setPassword(pswrd);
 
         userRepo.save(admin);
-        return "userAdd/adminAdd1";
+        return "redirect:/createUser/admin";
     }
 
 
@@ -64,7 +62,7 @@ public class UserCreationController {
         model.addAttribute("departments", departmentRepo.findAll());
 
 
-        return "userAdd/studentAdd1";
+        return "userAdd/studentAdd2";
     }
 
     @PostMapping("/student/execute")
@@ -85,7 +83,7 @@ public class UserCreationController {
     @GetMapping("/teacher")
     public String createTeacher(Model model) {
         model.addAttribute("departments", departmentRepo.findAll());
-        return "userAdd/teacherAdd1";
+        return "userAdd/teacherAdd2";
     }
 
     @PostMapping("/teacher/execute")

@@ -13,11 +13,10 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-	<link href="images/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
-	<link href="images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
-	<link href="images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
-	<link href="/site.webmanifest" rel="manifest">
-	<link href="images/safari-pinned-tab.svg" rel="mask-icon">
+	<link href="images2/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+	<link href="images2/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+	<link href="images2/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+	<link href="images2/safari-pinned-tab.svg" rel="mask-icon">
 	<meta content="#da532c" name="msapplication-TileColor">
 	<meta content="#ffffff" name="theme-color">
 </head>

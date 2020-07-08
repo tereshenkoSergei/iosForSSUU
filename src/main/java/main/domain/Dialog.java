@@ -36,6 +36,13 @@ public class Dialog {
         this.messageList = messageList;
     }
 
+    public String getStringUserList() {
+        StringBuilder s = new StringBuilder("");
+
+        userList.forEach(u -> s.append(u.getUsername()).append("; "));
+
+        return s.toString();
+    }
 
     @Override
     public String toString() {

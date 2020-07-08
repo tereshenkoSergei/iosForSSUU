@@ -1,9 +1,6 @@
 package main.controller;
 
 
-import main.domain.users.Admin;
-import main.domain.users.Student;
-import main.domain.users.Teacher;
 import main.domain.users.User;
 import main.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 @PreAuthorize("hasAuthority('ADMIN')")
 public class UserController {
+
     @Autowired
     UserRepo userRepo;
 
@@ -24,7 +22,7 @@ public class UserController {
 
         model.addAttribute("users", userRepo.findAll());
 
-        return "userList";
+        return "userList1";
     }
 
 

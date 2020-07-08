@@ -20,4 +20,5 @@ public class Admin extends User{
         list.add(Role.ADMIN);
         return list;
     }
+
 }

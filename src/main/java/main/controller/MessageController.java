@@ -37,7 +37,7 @@ public class MessageController {
 
         model.addAttribute("dialogs", user.getDialogList());
 
-        return "chats/chat";
+        return "chats/chat1";
     }
 
     @GetMapping("/createNewChat")

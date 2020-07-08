@@ -5,6 +5,7 @@ import java.util.Map;
 import main.domain.users.*;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -15,23 +16,22 @@ public class MainController {
     @GetMapping("/work")
     public String greeting(
             @AuthenticationPrincipal User user,
-            Map<String, Object> model) {
-        System.out.println(user.toString());
+            Model model) {
 
+        model.addAttribute("user", user);
 
         if (user instanceof Admin) {
-            System.out.println("personalPages/adminPersonalPage");
+
             return "personalPages/adminPersonalPage";
         }
         if (user instanceof Student) {
-            System.out.println("personalPages/studentPersonalPage");
+
             return "personalPages/studentPersonalPage";
         }
         if (user instanceof Teacher) {
-            System.out.println("personalPages/teacherPersonalPage");
+
             return "personalPages/teacherPersonalPage";
         }
-        System.out.println("personalPages/personalPageFull");
 
 
         return "personalPages/personalPageFull";
@@ -40,7 +40,7 @@ public class MainController {
 
     @GetMapping("/")
     public String mainPage() {
-       // return "MainpageIOS/MainpageIOS/index";
+        // return "MainpageIOS/MainpageIOS/index";
         return "main_page";
 
     }

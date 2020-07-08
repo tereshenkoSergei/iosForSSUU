@@ -1,45 +1,19 @@
-<#import "../parts/personalPageTemplate.ftlh" as p>
+<#import "../parts/personalPageTemplate1.ftlh" as p>
 
-<@p.personalPageTemplate>
+<@p.personalPageTemplate1>
 
 
 <#--    Nested start-->
-    <ul id="sdt_menu" class="sdt_menu">
-
-        <li>
-
-            <a href="#">
-
-                <img src="../../static/images/ssd.jpg" >
-
-
-                <span class="sdt_active"></span>
-                <span class="sdt_wrap">
-							<span class="sdt_link">Список дисциплин, который я учу</span>
-							<span class="sdt_descr"></span>
-						</span>
-            </a>
-
-            <div class="sdt_box">
-                <a href="#">It`s recommended from 500</a>
-                <a href="#">And it is better to have two at once</a>
-            </div>
-        </li>
-        <li>
-            <a href="#">
-                <img src="../../static/images/mpl.jpg" alt=""/>
-                <span class="sdt_active"></span>
-                <span class="sdt_wrap">
-							<span class="sdt_link">Чатик студенческий</span>
-							<span class="sdt_descr"></span>
-						</span>
-            </a>
-            <div class="sdt_box">
-                <a href="#">Under yours CPU</a>
-            </div>
-        </li>
-    </ul>
+    <li class="nav-item">
+        <a class="nav-link active" href="#"><i class="fa fa-th-list"></i>Список всех <strong>дисциплин</strong></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-comments"></i><strong>Чат</strong></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#" target="_blank"><i class="fa fa-list"></i>Список всех <strong>специальностей</strong></a>
+    </li>
 
 
 <#--    Nested end-->
-</@p.personalPageTemplate>
+</@p.personalPageTemplate1>

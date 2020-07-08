@@ -290,15 +290,12 @@
             <#if dialog??>
                 <#list dialog.getMessageList() as message>
                     <div
-
                             <#if (message.ifThisUser(thisUserName))>
                                 class="media media-chat media-chat-reverse"
                             </#if>
-
                             <#if !(message.ifThisUser(thisUserName))>
                                 class="media media-chat"
                             </#if>
-
                     >
                         <img alt="..." class="avatar"
                              src="https://img.icons8.com/color/36/000000/administrator-male.png">

@@ -19,6 +19,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/specialty")
 public class SpecialtyController {
+
     final
     DepartmentRepo departmentRepo;
 

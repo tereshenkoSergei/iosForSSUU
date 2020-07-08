@@ -1,38 +1,38 @@
-<#import "../parts/personalPageTemplate.ftlh" as p>
+<#import "../parts/personalPageTemplate1.ftlh" as p >
 
-<@p.personalPageTemplate>
+<@p.personalPageTemplate1 name="${user.getUsername()}" email="${user.getEmail()}" role="${user.getClassNameAsString()}">
 
 
 <#--    Nested start-->
-
-    <a href="/disciplineList">Список всех дисциплин</a></br>
-    <a href="/chat">Чат</a></br>
-    <a href="/specialty">Список всех специальностей</a></br>
-    <a href="/user">Управление данными пользователя</a></br>
-
-
+    <li class="nav-item">
+        <a class="nav-link active" href="/disciplineList"><i class="fa fa-th-list"></i>Список всех <strong>дисциплин</strong></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/chat"><i class="fa fa-comments"></i><strong>Чат</strong></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/specialty" target="_blank"><i class="fa fa-list"></i>Список всех <strong>специальностей</strong></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/user"><i class="fa fa-users"></i>Управление данными <strong>пользователя</strong></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/createUser/student"><i class="fa fa-graduation-cap"></i>Добавить <strong>Студента</strong></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/createUser/teacher"><i class="fa fa-id-card"></i>Добавить <strong>Преподавателя</strong></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/createUser/admin"><i class="fa fa-address-card-o"></i>Добавить <strong>Администратора</strong></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/createUser/dm"><i class="fa fa-address-book"></i>Добавить <strong>ОЗК</strong></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/group/create"><i class="fa fa-university"></i>Добавить <strong>Группу</strong></a>
+    </li>
 <#--    Nested end-->
-</@p.personalPageTemplate>
+</@p.personalPageTemplate1>
 
 
-
-<#--<li>-->
-
-<#--    <a href="#">-->
-
-<#--        <img src="../../static/images/ssd.jpg" >-->
-
-
-<#--        <span class="sdt_active"></span>-->
-<#--        <span class="sdt_wrap">-->
-<#--							<span class="sdt_link">Полный админский список дисциплин</span>-->
-<#--							<span class="sdt_descr"></span>-->
-<#--						</span>-->
-<#--    </a>-->
-
-<#--    <div class="sdt_box">-->
-<#--        <a href="#">It`s recommended from 500</a>-->
-<#--        <a href="#">And it is better to have two at once</a>-->
-<#--    </div>-->
-<#--</li>-->
 

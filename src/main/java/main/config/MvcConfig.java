@@ -17,9 +17,36 @@ public class MvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
- /*       registry.addResourceHandler("/css/**")
-                .addResourceLocations( "C:/IOS/src/main/resources/static/css" );
-*/
+
+
+        registry.addResourceHandler("/group/css/**")
+                .addResourceLocations( "file:///C:/IOS/src/main/resources/static/css/" );
+
+        registry.addResourceHandler("group/vendor/**")
+                .addResourceLocations( "file:///C:/IOS/src/main/resources/static/vendor/" );
+
+
+        registry.addResourceHandler("group/js/**")
+                .addResourceLocations( "file:///C:/IOS/src/main/resources/static/js/" );
+
+
+
+
+
+
+
+
+        registry.addResourceHandler("createUser/css/**")
+                .addResourceLocations( "file:///C:/IOS/src/main/resources/static/css/" );
+
+        registry.addResourceHandler("createUser/js/**")
+                .addResourceLocations( "file:///C:/IOS/src/main/resources/static/js/" );
+
+        registry.addResourceHandler("createUser/vendor/**")
+                .addResourceLocations( "file:///C:/IOS/src/main/resources/static/vendor/" );
+
+        registry.addResourceHandler("**/vendor/**")
+                .addResourceLocations( "file:///C:/IOS/src/main/resources/static/vendor/" );
 
         registry.addResourceHandler("/css/**")
                 .addResourceLocations( "file:///C:/IOS/src/main/resources/static/css/" );
@@ -38,6 +65,7 @@ public class MvcConfig implements WebMvcConfigurer {
 
         registry.addResourceHandler("/images/**")
                 .addResourceLocations( "file:///C:/IOS/src/main/resources/static/images/" );
+
         registry.addResourceHandler("/images2/**")
                 .addResourceLocations( "file:///C:/IOS/src/main/resources/static/images2/" );
 
